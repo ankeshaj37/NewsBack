@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React ,{useState,useEffect}from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Breking from './Breking'
+import {onAuthStateChanged} from 'firebase/auth'
+import './App.css'
+import Page from './Page'
+import { auth } from './firebase'
+import Dashboard from './Dashboard'
+import User  from './User'
+import Profile from './Profile'
+import About from './About'
+import Home from './Home'
+import Bignews from './Bignews'
 
-function App() {
+const App = () => {
+  
+
+  const [first, setFirst] = useState("")
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setFirst(currentUser)
+   
+  });
+  }, [])
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <>
+   
+    <BrowserRouter>
+    <Routes>
+
+      {/* /-/-/-/----//-/-/-/-/- */}
+
+      {!first? <Route path='/' element={<Page/>}/>:
+      <>
+      <Route path='/' element={<Home/>}/>
+      </>}
+
+       {/* --//--//-/-/-/--/-/-/-/ */}
+
+      <Route path='setting' element={<User/>}/>
+      <Route path='about' element={<About/>}/>
+      <Route path='profile' element={<Profile/>}/>
+      <Route path='dashboard' element={<Dashboard/>}/>
+      {/* ///////////// */}
+      <Route path='breking' element={<Breking/>}/>
+      <Route path='bignews' element={<Bignews/>}/>
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App
