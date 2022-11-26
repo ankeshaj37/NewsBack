@@ -21,19 +21,19 @@ const Dashboard = () => {
             </div>
 
             <div className='col-lg-2'>
-              <Link to="/">Trading News</Link>
+              <Link to="/tranding">Trading News</Link>
             </div>
 
             <div className='col-lg-2'>
-              <Link to="/">Populer News</Link>
+              <Link to="/populer">Populer News</Link>
             </div>
 
             <div className='col-lg-2'>
-              <Link to="/">Live News</Link>
+              <Link to="/live">Live News</Link>
             </div>
 
             <div className='col-lg-2'>
-              <Link to="/">Merquree</Link>
+              <Link to="/merquree">Merquree</Link>
             </div>
 
           </div>

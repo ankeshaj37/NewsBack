@@ -3,53 +3,54 @@ import Dashboard from './Dashboard'
 import { db } from './firebase'
 import Navbar from './Navbar'
 
-const Bignews = () => {
+const Populer = () => {
   const [get, setGet] = useState([])
 
   console.log(get);
 
-  const [title, setTitle] = useState('')
-  const [image, setImage] = useState('')
-  const [video, setVideo] = useState('')
+  const [poptitle, setPoptitle] = useState('')
+  const [popimage, setPopimage] = useState('')
+  const [popvideo, setPopvideo] = useState('')
 
   useEffect(() => {
-    db.collection('bignews').onSnapshot((tap) => (
+    db.collection('populer').onSnapshot((tap) => (
       setGet(tap.docs.map((e) => ({ uid: e.id, data: e.data() })))
     ))
 
   }, [])
 
   const add = () => {
-    db.collection("bignews").add({ title:title,image:image,video:video})
-    setTitle("")
-    setImage("")
-    setVideo("")
+    db.collection("populer").add({ poptitle:poptitle,popimage:popimage,popvideo:popvideo})
+    setPoptitle("")
+    setPopimage("")
+    setPopvideo("")
   };
 
   const delt = (uid) => {
-    db.collection('bignews').doc(uid).delete()
+    db.collection('populer').doc(uid).delete()
     console.log(uid);
   }
 
   return (
     <>
       <Navbar />
-     <Dashboard/>
+      <Dashboard/>
+     
       <div className='ddd'>
-      <h1>Big News</h1>
+      <h1>Populer News</h1>
         <div className='boxx'>
-        <label>BIG TITLE</label>
+        <label>POPULER TITLE</label>
           <div>
             
-          <input type='text'placeholder='Enter Title' value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input type='text'placeholder='Enter Title' value={poptitle} onChange={(e) => setPoptitle(e.target.value)} />
           </div>
-          <label>BIG IMAGE</label>
+          <label>POPULER IMAGE</label>
           <div>
-          <input type='text' placeholder='Enter Image url'  value={image} onChange={(e) => setImage(e.target.value)} />
+          <input type='text' placeholder='Enter Image url'  value={popimage} onChange={(e) => setPopimage(e.target.value)} />
             </div>
-            <label>BIG VIDEO</label>
+            <label>POPULER VIDEO</label>
             <div>
-            <input type='text'placeholder='Enter Video url' value={video} onChange={(e) => setVideo(e.target.value)} />
+            <input type='text'placeholder='Enter Video url' value={popvideo} onChange={(e) => setPopvideo(e.target.value)} />
             </div><br/>
           <button onClick={add}>Add</button>
         </div>
@@ -63,11 +64,11 @@ const Bignews = () => {
              <div className='adddiv col-lg-3'>
               <p>{i+1}</p>
              <div> <p>{e.uid}</p></div>
-            <div><p>title : {e.data.title}</p></div>
-            <div>image : <img  className='imageadd' src= {e.data.image} /></div>
+            <div><p>title : {e.data.poptitle}</p></div>
+            <div>image : <img  className='imageadd' src= {e.data.popimage} /></div>
       
             <div > video : <video  className='videooo' width="320" height="240" controls>
-                <source src={e.data.video} type="video/mp4" />
+                <source src={e.data.popvideo} type="video/mp4" />
               </video></div>
           
              <div className='butadd'><button onClick={() => delt(e.uid)}>delete</button></div>
@@ -84,4 +85,4 @@ const Bignews = () => {
   )
 }
 
-export default Bignews
+export default Populer

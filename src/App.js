@@ -11,7 +11,10 @@ import Profile from './Profile'
 import About from './About'
 import Home from './Home'
 import Bignews from './Bignews'
-
+import Tranding from './Tranding'
+import Populer from './Populer'
+import Live from './Live'
+import Merquree from './Merquree'
 const App = () => {
   
 
@@ -48,6 +51,10 @@ const App = () => {
       {/* ///////////// */}
       <Route path='breking' element={<Breking/>}/>
       <Route path='bignews' element={<Bignews/>}/>
+      <Route path='tranding' element={<Tranding/>}/>
+      <Route path='populer' element={<Populer/>}/>
+      <Route path='live' element={<Live/>}/>
+      <Route path='merquree' element={<Merquree/>}/>
     </Routes>
     </BrowserRouter>
     </>
