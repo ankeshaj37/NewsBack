@@ -27,7 +27,7 @@ const Merquree = () => {
   };
 
   const delt = (uid) => {
-    db.collection('marquee').doc(uid).delete()
+    db.collection('Merquree').doc(uid).delete()
     console.log(uid);
   }
 

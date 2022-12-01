@@ -13,19 +13,7 @@ const Dashboard = () => {
         <div className='dashss container'>
           <div className=' insaidnav row'>
             <div className='col-lg-2'>
-              <Link to="/breking">Breking News</Link>
-            </div>
-
-            <div className='col-lg-2'>
-              <Link to="/bignews">Big News</Link>
-            </div>
-
-            <div className='col-lg-2'>
-              <Link to="/tranding">Trading News</Link>
-            </div>
-
-            <div className='col-lg-2'>
-              <Link to="/populer">Populer News</Link>
+              <Link to="/breking">Post News</Link>
             </div>
 
             <div className='col-lg-2'>
