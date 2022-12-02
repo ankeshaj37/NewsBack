@@ -8,33 +8,22 @@ const Dashboard = () => {
 
     <>
       <Navbar />
-      <div className='ddd'>
-
-        <div className='dashss container'>
           <div className=' insaidnav row'>
-            <div className='col-lg-2'>
+            <ul className='ulss'>
+            <li className='lii'>
+              <Link to="/">Home</Link>
+              </li>
+              <li className='lii'>
               <Link to="/breking">Post News</Link>
-            </div>
-
-            <div className='col-lg-2'>
-              <Link to="/live">Live News</Link>
-            </div>
-
-            <div className='col-lg-2'>
-              <Link to="/merquree">Merquree</Link>
-            </div>
-
+              </li>
+              <li className='lii'>
+              <Link to="/">Live News</Link>
+              </li>
+              <li className='lii' >
+              <Link to="/">Merquree</Link>
+              </li>
+            </ul>  
           </div>
-
-
-
-
-
-
-
-        </div>
-      </div>
-
     </>
   )
 }

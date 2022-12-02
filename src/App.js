@@ -37,7 +37,7 @@ const App = () => {
 
       {/* /-/-/-/----//-/-/-/-/- */}
 
-      {!first? <Route path='/' element={<Page/>}/>:
+      {first? <Route path='/' element={<Page/>}/>:
       <>
       <Route path='/' element={<Home/>}/>
       </>}
@@ -47,9 +47,9 @@ const App = () => {
       <Route path='setting' element={<User/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='profile' element={<Profile/>}/>
-      <Route path='dashboard' element={<Dashboard/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
       {/* ///////////// */}
-      <Route path='breking' element={<Breking/>}/>
+      <Route path='/breking' element={<Breking/>}/>
       <Route path='bignews' element={<Bignews/>}/>
       <Route path='tranding' element={<Tranding/>}/>
       <Route path='populer' element={<Populer/>}/>

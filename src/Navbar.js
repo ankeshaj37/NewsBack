@@ -13,25 +13,43 @@ const Navbar = () => {
   }
   return (
     <>
-      <div className=' navs container'>
-
-
-        <div className=' nav row'>
-          <div className='dash col-lg-8'>
-            <Link to='/'>Home</Link>
-            <div className='lik'><Link to='/dashboard'>Dashboard</Link></div>
-            <div className='lik'><Link to='/setting'>Setting</Link></div>
-            <div className='lik'><Link to='/profile'>Profile</Link></div>
-            <div className='lik'><Link to='/about'>About us</Link></div>
-        
-            <button className='logout' onClick={Logout}>Logout</button>
+      <nav id="sidebar">
+   
+      <div className='flaxx'>
+   <div class="sidebar_blog_1">
+          <div class="sidebar-header">
+            <div class="logo_section">
+              <img src='https://res.cloudinary.com/dj1gcouh3/image/upload/v1669876857/imgpsh_fullsize_anim_yttmy6.png' />
+            </div>
           </div>
-          <div className='flaxx col-lg-4'>
-            <h1>Admin Panal</h1>
+          <div class="sidebar_user_info">
+            <div class="user_profle_side">
+              <div class="user_info">
+                <h6>iEveEra Times</h6>
+                <p><span class="online_animation"></span> Online</p>
+              </div>
+            </div>
           </div>
-
         </div>
-      </div>
+           </div>
+        <div class="sidebar_blog_2">
+          <h4>Admin Panal</h4>
+          <ul class="list-unstyled components">
+            <li>
+              <Link to='/dashboard'>Dashboard</Link>
+            </li>
+            <li>
+              <Link to=''>Setting</Link>
+            </li>
+            <li>
+              <Link to=''>Profile</Link>
+            </li>
+            <li>
+              <Link onClick={Logout}> <h3>Logout</h3></Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </>
   )
 }
