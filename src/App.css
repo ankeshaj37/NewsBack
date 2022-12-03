@@ -124,6 +124,10 @@ height: 100px;
 }
 .lii{
     margin-right: 50px;
+    background-color: red;
+    height: 25px;
+    padding: 10px;
+    border-radius: 10px;
 }
 a{
     color: aliceblue;
@@ -159,10 +163,24 @@ a{
 .bigadd{
     display: flex;
 }
+.dashh{
+  background-color: #ff5722;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+}
 
-
-
-
+.dashlink{
+  margin-top: 20px;
+  background-color: aqua;
+  height: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+}
+.logo{
+  height: 100px;
+}
 
 
 

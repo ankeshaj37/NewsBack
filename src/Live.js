@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Dashboard from './Dashboard'
+import Dash from './Dash'
 import { db } from './firebase'
 import Navbar from './Navbar'
 
@@ -34,7 +34,7 @@ const Live = () => {
   return (
     <>
       <Navbar />
-<Dashboard/>
+<Dash/>
       <div className='ddd'>
       <h1>Live News</h1>
         <div className='boxx'>

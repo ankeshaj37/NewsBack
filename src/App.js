@@ -1,20 +1,16 @@
 import React ,{useState,useEffect}from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Breking from './Breking'
 import {onAuthStateChanged} from 'firebase/auth'
 import './App.css'
 import Page from './Page'
 import { auth } from './firebase'
-import Dashboard from './Dashboard'
 import User  from './User'
 import Profile from './Profile'
-import About from './About'
 import Home from './Home'
-import Bignews from './Bignews'
-import Tranding from './Tranding'
-import Populer from './Populer'
+
+import Dash from './Dash'
+import Breking from './Breking'
 import Live from './Live'
-import Merquree from './Merquree'
 const App = () => {
   
 
@@ -45,16 +41,12 @@ const App = () => {
        {/* --//--//-/-/-/--/-/-/-/ */}
 
       <Route path='setting' element={<User/>}/>
-      <Route path='about' element={<About/>}/>
       <Route path='profile' element={<Profile/>}/>
-      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/dashboard' element={<Dash/>}/>
+      <Route path='/addnews' element={<Breking/>}/>
+      <Route path='/live' element={<Live/>}/>
       {/* ///////////// */}
-      <Route path='/breking' element={<Breking/>}/>
-      <Route path='bignews' element={<Bignews/>}/>
-      <Route path='tranding' element={<Tranding/>}/>
-      <Route path='populer' element={<Populer/>}/>
-      <Route path='live' element={<Live/>}/>
-      <Route path='merquree' element={<Merquree/>}/>
+   
     </Routes>
     </BrowserRouter>
     </>

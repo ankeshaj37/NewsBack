@@ -1,16 +1,9 @@
 import React from 'react'
-import { auth } from './firebase'
-import { signOut } from "firebase/auth";
 import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
-
-
-  const Logout = async () => {
-    await signOut(auth);
-
-  }
+ 
   return (
     <>
       <nav id="sidebar">
@@ -25,7 +18,7 @@ const Navbar = () => {
           <div class="sidebar_user_info">
             <div class="user_profle_side">
               <div class="user_info">
-                <h6>iEveEra Times</h6>
+                <h1>iEveEra Times</h1>
                 <p><span class="online_animation"></span> Online</p>
               </div>
             </div>
@@ -33,19 +26,21 @@ const Navbar = () => {
         </div>
            </div>
         <div class="sidebar_blog_2">
-          <h4>Admin Panal</h4>
+         <a href='/'>
+         <h4>Admin Panal</h4>
+         </a>
           <ul class="list-unstyled components">
             <li>
               <Link to='/dashboard'>Dashboard</Link>
             </li>
             <li>
-              <Link to=''>Setting</Link>
+              <Link to='/setting'>Setting</Link>
             </li>
             <li>
-              <Link to=''>Profile</Link>
+              <Link to='/profile'>Profile</Link>
             </li>
             <li>
-              <Link onClick={Logout}> <h3>Logout</h3></Link>
+              <Link to=''>Totale News</Link>
             </li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Dashboard from './Dashboard'
+import Dash from './Dash'
 import { db } from './firebase'
 
 import Navbar from './Navbar'
@@ -41,10 +41,20 @@ const Breking = () => {
   return (
     <>
       <Navbar />
-      <Dashboard />
+      <Dash/>
       <div className='ddd'>
         <h1>All News</h1>
         <div className='boxx'>
+        <div class="col-md-4">
+    
+    <select id="inputState" class="form-select">
+      <option selected>Choose News Category...</option>
+      <option>Breking News</option>
+      <option>Trending News</option>
+      <option>Populer News</option>
+      <option>Letuse News</option>
+    </select>
+  </div>
           <label>News Title</label>
           <div>
             <input type='text' placeholder='Enter Title' value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -56,6 +66,9 @@ const Breking = () => {
           <label>News Video</label>
           <div>
             <input type='text' placeholder='Enter Video url' value={video} onChange={(e) => setVideo(e.target.value)} />
+          </div><br />
+          <div>
+            <input type='text' placeholder='Enter Details ' value={''} onChange={''} />
           </div><br />
           <button onClick={post}>Post</button>
         </div>
