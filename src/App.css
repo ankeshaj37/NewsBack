@@ -450,5 +450,8 @@ a{
     border-bottom: solid #ff5722 1px;
   }
   
-  
+  .flax{
+    display: flex;
+   
+  }
   
