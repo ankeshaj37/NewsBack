@@ -17,7 +17,7 @@ console.log(Logout);
 
     <>
       <Navbar />
-      <div className='container'>
+      <div className='container-fluid'>
       <div className=' insaidnav row'>
             <ul className='ulss'>
             <li className='lii'>

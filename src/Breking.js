@@ -11,32 +11,48 @@ const Breking = () => {
   const [video, setVideo] = useState([])
   const [olddata, setOlddata] = useState([])
 
-
   const post = () => {
-    db.collection('ankesh').doc('TGVzpLpkYRPCi5JJ4hV2').set({ title, image, video })
+    
 
+    db.collection(select).add({ title: title, image: image, video: video })
 
-    setVideo("")
-    db.collection('sumkesh').add({ title: title, image: image, video: video })
-    db.collection('treding').add({ title: title, image: image, video: video })
-    db.collection('populer').add({ title: title, image: image, video: video })
-    db.collection('news').add({ title: title, image: image, video: video })
-    db.collection('snews').add({ title: title, image: image, video: video })
+    setTitle('')
+    setImage('')
+    setVideo('')
+
+    
   }
-
-
-
+      
   useEffect(() => {
-    db.collection('sumkesh').onSnapshot(tap => (
+    db.collection('brekingnews').onSnapshot(tap => (
+      setOlddata(tap.docs.map((e) => ({ uid: e.id, data: e.data() })))
+    ))
+
+    db.collection('bignews').onSnapshot(tap => (
+      setOlddata(tap.docs.map((e) => ({ uid: e.id, data: e.data() })))
+    ))
+    db.collection('populernews').onSnapshot(tap => (
+      setOlddata(tap.docs.map((e) => ({ uid: e.id, data: e.data() })))
+    ))
+    db.collection('trendingnews').onSnapshot(tap => (
+      setOlddata(tap.docs.map((e) => ({ uid: e.id, data: e.data() })))
+    ))
+    db.collection('topnews').onSnapshot(tap => (
       setOlddata(tap.docs.map((e) => ({ uid: e.id, data: e.data() })))
     ))
   }, [])
 
-
   const del = (uid) => {
-    db.collection('sumkesh').doc(uid).delete()
+    db.collection('brekingnews').doc(uid).delete()
+    db.collection('bignews').doc(uid).delete()
+    db.collection('populernews').doc(uid).delete()
+    db.collection('trendingnews').doc(uid).delete()
+    db.collection('topnews').doc(uid).delete()
   }
 
+  const [select, setSelect] = useState([])
+
+  
 
   return (
     <>
@@ -46,14 +62,17 @@ const Breking = () => {
         <h1>All News</h1>
         <div className='boxx'>
           <div class="col-md-4">
-
-            <select id="inputState" class="form-select">
-              <option selected>Choose News Category...</option>
-              <option>Breking News</option>
-              <option>Trending News</option>
-              <option>Populer News</option>
-              <option>Letuse News</option>
-            </select>
+            <div className='selecterdiv'>
+              <select onChange={(e) => setSelect(e.target.value)} id="inputState" class="form-select" >
+                <option selected>Choose News Category...</option>
+                <option >brekingnews </option>
+                <option>bignews</option>
+                <option>populernews</option>
+                <option >trendingnews</option>
+                <option >topnews</option>
+             
+              </select> 
+            </div>
           </div>
           <label>News Title</label>
           <div>
@@ -73,61 +92,23 @@ const Breking = () => {
           <button onClick={post}>Post</button>
         </div>
         <>
-         
-           
-
-                 <div class="container-fluid">
-                <div class=" flax row">
-                <div class=" adddiv col-lg-6">
-             
-                {olddata.map((e) => (
+          <div class="container-fluid">
+            <div class="row">
+              {olddata.map((e) => (
                 <>
-                  <p>{e.data.title} </p>
-                  <img className='imageadd' src={e.data.image} alt={''} />
-                  <video className='videooo' width="320" height="240" controls>
-                    <source src={e.data.video} type="video/mp4" /></video>
-                  <button onClick={() => del(e.uid)}>delete</button>
-                  </>
-               ))}
-                </div>
-              
-                </div>
-                </div>
-             
-             
-          
-    
-{/* 
-          <div class="row main-cont-wthree-2 py-5">
-
-            <div class="col-lg-12 feature-grid-right mt-lg-0 mt-5">
-
-              <div class="row call-grids-w3 justify-content-center">
-               
-                    <div class="col-md-4 col-6 col-sec">
-                   
-                      <div class="box-wrap">
-                      {olddata.map((e) => (
-                  <>
-                        <div class="icon">
-                          <img src={e.data.image} class="img-fluid" alt="" />
-                        </div>
-                        <div>
-                          <video href={e.data.video}></video>
-                        </div>
-                        <h4>{e.data.title}</h4>
-                        <button onClick={() => del(e.uid)}>delete</button>
-                        </>
-                ))}
-                      </div>
-                 
+                  <div class=" adddiv col-lg-3">
+                    <div>
+                      <p>{e.data.title} </p>
+                      <div> <img className='imageadd' src={e.data.image} alt={''} /></div>
+                      <div><video className='videooo' width="320" height="240" controls>
+                        <source src={e.data.video} type="video/mp4" /></video></div>
+                      <p> <button onClick={() => del(e.uid)}>delete</button></p>
                     </div>
-               
-              </div>
-
+                  </div>
+                </>
+              ))}
             </div>
-
-          </div> */}
+          </div>
         </>
       </div>
     </>

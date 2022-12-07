@@ -3,12 +3,13 @@ import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDtMeIzy6869UAID9zQicmSqcsz5fh_q_Y",
-  authDomain: "homenews-1638a.firebaseapp.com",
-  projectId: "homenews-1638a",
-  storageBucket: "homenews-1638a.appspot.com",
-  messagingSenderId: "31333880697",
-  appId: "1:31333880697:web:9d0591f918b86382bc55a8"
+  apiKey: "AIzaSyDvhvzgwnskV2YEgH9xpCeJMMuXuQvLLNI",
+  authDomain: "news-16a79.firebaseapp.com",
+  projectId: "news-16a79",
+  storageBucket: "news-16a79.appspot.com",
+  messagingSenderId: "201884703953",
+  appId: "1:201884703953:web:44a2675a497249e6bab9f0",
+  measurementId: "G-9HZFES8GWJ"
 };
 
   const app = firebase.initializeApp(firebaseConfig);
