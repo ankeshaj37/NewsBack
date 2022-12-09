@@ -7,10 +7,11 @@ import { auth } from './firebase'
 import User  from './User'
 import Profile from './Profile'
 import Home from './Home'
-
 import Dash from './Dash'
 import Breking from './Breking'
 import Live from './Live'
+import News from './News'
+
 const App = () => {
   
 
@@ -33,18 +34,19 @@ const App = () => {
 
       {/* /-/-/-/----//-/-/-/-/- */}
 
-      {first? <Route path='/' element={<Page/>}/>:
+      {!first? <Route path='/' element={<Page/>}/>:
       <>
       <Route path='/' element={<Home/>}/>
       </>}
 
        {/* --//--//-/-/-/--/-/-/-/ */}
 
-      <Route path='setting' element={<User/>}/>
-      <Route path='profile' element={<Profile/>}/>
+      <Route path='/setting' element={<User/>}/>
+      <Route path='/profile' element={<Profile/>}/>
       <Route path='/dashboard' element={<Dash/>}/>
       <Route path='/addnews' element={<Breking/>}/>
       <Route path='/live' element={<Live/>}/>
+      <Route path='/total' element={<News/>}/>
       {/* ///////////// */}
    
     </Routes>

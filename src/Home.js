@@ -9,7 +9,7 @@ const Home = () => {
     <Navbar/>
     <Dashboard/>
     <div className='dd'>Home</div>
-
+<p>sghsgsgs</p>
     </>
  
   )

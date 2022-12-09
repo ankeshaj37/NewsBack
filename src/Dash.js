@@ -15,6 +15,7 @@ const Dash = () => {
             <Link to='/addnews'className='dashlink'>Add News </Link>
             <Link to='/live' className='dashlink' >Live News </Link>
             
+            
            </div>
       </div>
    

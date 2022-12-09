@@ -18,7 +18,6 @@ const Page = () => {
             setEmail('')
             setPassword('')
        }
-
     }
    
     return (

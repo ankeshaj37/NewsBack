@@ -2,10 +2,10 @@
 
 .box{
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    height:220px;
+    height:auto;
     display: flex;
     flex-direction: column;
-    width: 190px;
+    width: auto;
     padding: 50px;
     margin-top: 300px;
     border-radius: 15px;
@@ -108,7 +108,20 @@ a{
     padding-left: 150px;
   
 }
-
+.len{
+  background-color:aqua;
+  padding: 1px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 10px;
+  width: 50px;
+}
+.pp{
+  background-color: white;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
 .insaidnav{
 display: flex;
 justify-content: center;
@@ -117,7 +130,15 @@ color: aliceblue;
 height: 100px;
 
 }
-
+.ww{
+  background-color:goldenrod;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+.dd{
+  background-color: red;
+}
 .ulss{
     display: flex;
     list-style: none;  

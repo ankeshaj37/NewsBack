@@ -25,7 +25,7 @@ console.log(Logout);
               </li>
 
               <li className='lii'>
-              <Link  onClick={Logout()} >Logout</Link>
+              <Link  onClick={Logout} >Logout</Link>
               </li>
               
             </ul>  
