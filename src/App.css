@@ -162,6 +162,16 @@ a{
     padding: 20px;
     width: 300px;
 }
+.de{
+  cursor: pointer;
+}
+.bb{
+  display: flex;
+  justify-content: space-around;
+  background-color: #1ed085;
+  width: 200px;
+  padding: 10px;
+}
 .adddiv{
     display: flex;
    margin: 10px;
@@ -169,6 +179,10 @@ a{
     width: auto;
     padding: 20px;
     
+}
+.fo{
+  display: flex;
+ 
 }
 .videooo{
     width: 70px;

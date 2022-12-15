@@ -44,10 +44,7 @@ const Breking = () => {
       setFirst(tap.docs.map((e)=>(e.data())))
     ))
 
- 
   }, [])
-
-console.log(first);
 
 
   return (
@@ -88,6 +85,9 @@ console.log(first);
         </div>
         <>
           <div class="container-fluid">
+            <br/>
+            <br/>
+            <h3>Last Add News  {select}</h3><br/>
             <div class="row">
               {first.map((e) => (
                 <>

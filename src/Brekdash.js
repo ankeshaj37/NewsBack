@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { db } from './firebase';
+import DeleteIcon from '@mui/icons-material/Delete';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+
 
 const Brekdash = () => {
 const [brek, setBrek] = useState([])
@@ -20,7 +23,6 @@ useEffect(() => {
     db.collection('bignews').onSnapshot(tap=>(
         setBig(tap.docs.map((e)=>({uid:e.id,data:e.data()})))
     ))
-
 
   }, [])
   useEffect(() => {
@@ -47,9 +49,13 @@ useEffect(() => {
     db.collection('topnews').doc(uid).delete()
   
   }
-console.log(delet);
+  
+ 
+  
+
   return (
     <>
+    
     <Tabs>
     <TabList>
       <Tab>Breking News <br/><div className='len'>{brek.length}</div></Tab>
@@ -65,13 +71,18 @@ console.log(delet);
                 <>
                   <div class=" adddiv col-lg-3">
                     <div>
-                      <p>{e.title} </p>
-                      <div> <img className='imageadd' src={e.image} alt={''} /></div>
+                      <p>{e.data.title} </p>
+                      <div> <img className='imageadd' src={e.data.image} alt={''} /></div>
                       <div><video className='videooo' width="320" height="240" controls>
-                        <source src={e.video} type="video/mp4" /></video></div>
-                        <button onClick={()=>delet(e.uid)}>delete</button>
+                        <source src={e.data.video} type="video/mp4" /></video></div>
+                        <div className='bb'>
+                        <DeleteIcon className='de' onClick={()=>delet(e.uid)}></DeleteIcon>
+                       <BorderColorIcon  className='de'></BorderColorIcon>
+                        </div>
+                       
                     </div>
                   </div>
+                  
                 </>
               ))}
     </div>
@@ -86,7 +97,10 @@ console.log(delet);
                       <div> <img className='imageadd' src={e.data.image} alt={''} /></div>
                       <div><video className='videooo' width="320" height="240" controls>
                         <source src={e.data.video} type="video/mp4" /></video></div>
-                        <button onClick={()=>delet(e.uid)}>delete</button>
+                        <div className='bb'>
+                        <DeleteIcon className='de' onClick={()=>delet(e.uid)}></DeleteIcon>
+                       <BorderColorIcon  className='de'></BorderColorIcon>
+                        </div>
                     </div>
                   </div>
                 </>
@@ -99,11 +113,14 @@ console.log(delet);
                 <>
                   <div class=" adddiv col-lg-3">
                     <div>
-                      <p>{e.title} </p>
-                      <div> <img className='imageadd' src={e.image} alt={''} /></div>
+                      <p>{e.data.title} </p>
+                      <div> <img className='imageadd' src={e.data.image} alt={''} /></div>
                       <div><video className='videooo' width="320" height="240" controls>
-                        <source src={e.video} type="video/mp4" /></video></div>
-                        <button onClick={()=>delet(e.uid)}>delete</button>
+                        <source src={e.data.video} type="video/mp4" /></video></div>
+                        <div className='bb'>
+                        <DeleteIcon className='de' onClick={()=>delet(e.uid)}></DeleteIcon>
+                       <BorderColorIcon  className='de'></BorderColorIcon>
+                        </div>
                     </div>
                   </div>
                 </>
@@ -116,11 +133,14 @@ console.log(delet);
                 <>
                   <div class=" adddiv col-lg-3">
                     <div>
-                      <p>{e.title} </p>
-                      <div> <img className='imageadd' src={e.image} alt={''} /></div>
+                      <p>{e.data.title} </p>
+                      <div> <img className='imageadd' src={e.data.image} alt={''} /></div>
                       <div><video className='videooo' width="320" height="240" controls>
-                        <source src={e.video} type="video/mp4" /></video></div>
-                        <button onClick={()=>delet(e.uid)}>delete</button>
+                        <source src={e.data.video} type="video/mp4" /></video></div>
+                        <div className='bb'>
+                        <DeleteIcon className='de' onClick={()=>delet(e.uid)}></DeleteIcon>
+                       <BorderColorIcon  className='de'></BorderColorIcon>
+                        </div>
                     </div>
                   </div>
                 </>
@@ -133,11 +153,14 @@ console.log(delet);
                 <>
                   <div class=" adddiv col-lg-3">
                     <div>
-                      <p>{e.title} </p>
-                      <div> <img className='imageadd' src={e.image} alt={''} /></div>
+                      <p>{e.data.title} </p>
+                      <div> <img className='imageadd' src={e.data.image} alt={''} /></div>
                       <div><video className='videooo' width="320" height="240" controls>
-                        <source src={e.video} type="video/mp4" /></video></div>
-                        <button onClick={()=>delet(e.uid)}>delete</button>
+                        <source src={e.data.video} type="video/mp4" /></video></div>
+                        <div className='bb'>
+                        <DeleteIcon className='de' onClick={()=>delet(e.uid)}></DeleteIcon>
+                       <BorderColorIcon  className='de'></BorderColorIcon>
+                        </div>
                     </div>
                   </div>
                 </>
